@@ -55,6 +55,10 @@ public class UserOrderForm {
     @NotNull
     private boolean washingMachineInstallation;
 
+    @Numeric
+    @NotBlank
+    private String newDate;
+
     public String getCustomerName() {
         return customerName;
     }
@@ -149,5 +153,12 @@ public class UserOrderForm {
 
     public void setWashingMachineInstallation(boolean washingMachineInstallation) {
         this.washingMachineInstallation = washingMachineInstallation;
+    }
+    public String getNewDate() {
+        return newDate;
+    }
+
+    public void setNewDate(String newDate) {
+        this.newDate = newDate;
     }
 }
