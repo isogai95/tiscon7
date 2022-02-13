@@ -99,7 +99,9 @@ public class EstimateDao {
         PrefectureDistance prefectureDistance = new PrefectureDistance();
         prefectureDistance.setPrefectureIdFrom(prefectureIdFrom);
         prefectureDistance.setPrefectureIdTo(prefectureIdTo);
-
+        if(prefectureDistance.getPrefectureIdFrom().equals(prefectureDistance.getPrefectureIdTo())) {
+            sql = "SELECT DISTANCE FROM PREFECTURE_DISTANCE WHERE PREFECTURE_ID_FROM = :prefectureIdFrom AND PREFECTURE_ID_TO = :prefectureIdTo";
+        }
         double distance;
         try {
             distance = parameterJdbcTemplate.queryForObject(sql, new BeanPropertySqlParameterSource(prefectureDistance), double.class);

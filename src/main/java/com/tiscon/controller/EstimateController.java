@@ -35,7 +35,7 @@ public class EstimateController {
         this.estimateService = estimateService;
     }
 
-    @GetMapping("")
+    @GetMapping("")//localhost:9080をうつとここにくる
     String index(Model model) {
         return "top";
     }
@@ -46,7 +46,7 @@ public class EstimateController {
      * @param model 遷移先に連携するデータ
      * @return 遷移先
      */
-    @GetMapping("input")
+    @GetMapping("input")//localhost:9080/input をうつとここにくる
     String input(Model model) {
         if (!model.containsAttribute("userOrderForm")) {
             model.addAttribute("userOrderForm", new UserOrderForm());
